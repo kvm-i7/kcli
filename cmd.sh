@@ -1,10 +1,7 @@
 #!/bin/sh
-
 set -e
-
 BASE_URL="https://platform.kvm-i7.host/api"
 CONFIG_FILE="$HOME/.kcli.conf"
-
 usage() {
   cat << EOF
 kcli - A simple CLI for the KVM-i7 API.
@@ -32,14 +29,12 @@ Example:
   kcli reinstall "local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
 EOF
 }
-
 _api_get() {
   curl -s -X GET \
     -H "Authorization: Bearer $TOKEN" \
     -H "Content-Type: application/json" \
     "$BASE_URL/$1"
 }
-
 _api_post() {
   curl -s -X POST \
     -H "Authorization: Bearer $TOKEN" \
@@ -47,7 +42,6 @@ _api_post() {
     -d "$2" \
     "$BASE_URL/$1"
 }
-
 _process() {
   RESP=$(cat)
   if ! echo "$RESP" | jq . > /dev/null 2>&1; then
@@ -57,10 +51,12 @@ _process() {
   fi
   echo "$RESP" | jq .
 }
-
-CMD=${1:-help}
-shift || true
-
+if [ $# -gt 0 ]; then
+  CMD="$1"
+  shift
+else
+  CMD="help"
+fi
 case "$CMD" in
   help|-h|--help)
     usage
@@ -78,12 +74,10 @@ case "$CMD" in
     exit 0
     ;;
 esac
-
 if ! command -v curl >/dev/null 2>&1 || ! command -v jq >/dev/null 2>&1; then
   echo "Error: 'curl' and 'jq' are required." >&2
   exit 1
 fi
-
 if [ -n "$KVM_I7_TOKEN" ]; then
   TOKEN="$KVM_I7_TOKEN"
 elif [ -f "$CONFIG_FILE" ]; then
@@ -93,7 +87,6 @@ else
   echo "Run 'kcli set-token <your-token>' to configure." >&2
   exit 1
 fi
-
 case "$CMD" in
   start|stop|status)
     _api_get "$CMD" | _process
