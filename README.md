@@ -7,7 +7,7 @@
 <h1 align="center">KVM Command-line (kcli)</h1>
 
 <p align="center">
-  <a href="https://discord.gg/t3vps"><img src="https://img.shields.io/badge/Join_our_Discord-2.1K%2B_Members-5865F2?style=for-the-badge&logo=discord&logoColor=white"></a>
+  <a href="https://discord.gg/compute"><img src="https://img.shields.io/badge/Join_our_Discord-2.1K%2B_Members-5865F2?style=for-the-badge&logo=discord&logoColor=white"></a>
   <a href="https://kvm-i7.host/status.html"><img src="https://img.shields.io/badge/Service_Status-Online-23a55a?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTEyIDE3LjI3TDQuNSAxMi41bDEuNDE0LTEuNDE0TDExIDE0LjQ0bDYuMDgtNi4wOEwxOC41IDEyLjV6Ii8+PC9zdmc+"></a>
 </p>
 
@@ -109,7 +109,7 @@ kcli status
 ```
 
 ## Community
-Join our community on [Discord](https://discord.gg/t3vps) for support and discussion.
+Join our community on [Discord](https://discord.gg/compute) for support and discussion.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/kvm-i7/kcli/blob/main/LICENSE) file for details.
