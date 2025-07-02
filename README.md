@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">kcli</h1>
+<h1 align="center">KVM Command-line (kcli)</h1>
 
 <p align="center">
   <a href="https://discord.gg/t3vps"><img src="https://img.shields.io/badge/Join_our_Discord-2.1K%2B_Members-5865F2?style=for-the-badge&logo=discord&logoColor=white"></a>
