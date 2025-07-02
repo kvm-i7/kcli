@@ -1,14 +1,14 @@
-<p align=\"center\">
-  <a href=\"https://kvm-i7.host\">
-    <img src=\"https://github.com/kvm-i7/.github/blob/main/profile/logo.png?raw=true\" alt=\"KVM-i7 Logo\" width=\"150\">
+<p align="center">
+  <a href="https://kvm-i7.host">
+    <img src="https://github.com/kvm-i7/.github/blob/main/profile/logo.png?raw=true" alt="KVM-i7 Logo" width="150">
   </a>
 </p>
 
-<h1 align=\"center\">kcli</h1>
+<h1 align="center">kcli</h1>
 
-<p align=\"center\">
-  <a href=\"https://discord.gg/t3vps\"><img src=\"https://img.shields.io/badge/Join_our_Discord-2.1K%2B_Members-5865F2?style=for-the-badge&logo=discord&logoColor=white\"></a>
-  <a href=\"https://kvm-i7.host/status.html\"><img src=\"https://img.shields.io/badge/Service_Status-Online-23a55a?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTEyIDE3LjI3TDQuNSAxMi41bDEuNDE0LTEuNDE0TDExIDE0LjQ0bDYuMDgtNi4wOEwxOC41IDEyLjV6Ii8+PC9zdmc+\"></a>
+<p align="center">
+  <a href="https://discord.gg/t3vps"><img src="https://img.shields.io/badge/Join_our_Discord-2.1K%2B_Members-5865F2?style=for-the-badge&logo=discord&logoColor=white"></a>
+  <a href="https://kvm-i7.host/status.html"><img src="https://img.shields.io/badge/Service_Status-Online-23a55a?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTEyIDE3LjI3TDQuNSAxMi41bDEuNDE0LTEuNDE0TDExIDE0LjQ0bDYuMDgtNi4wOEwxOC41IDEyLjV6Ii8+PC9zdmc+"></a>
 </p>
 
 A simple, powerful, and portable POSIX shell CLI for managing your [KVM-i7](https://kvm-i7.host) VPS.
@@ -71,7 +71,7 @@ The basic syntax is `kcli <command> [arguments]`.
 | `hardware`          | Fetch hardware information (cores, ram, disk).                |
 | `usage`             | Fetch current resource usage (cpu, memory).                   |
 | `ssh-info`          | Fetch SSH connection details and token.                       |
-| `exec \"<command>\"`  | Execute a command on the VPS. Must be quoted.                 |
+| `exec "<command>"`  | Execute a command on the VPS. Must be quoted.                 |
 | `reinstall-options` | List all available OS templates for reinstallation.           |
 | `reinstall <tmpl>`  | Reinstall the VPS with a new OS. Use the `template` string.   |
 | `help`              | Show the help message.                                        |
@@ -85,7 +85,7 @@ kcli status
 
 **Execute a Remote Command**
 ```bash
-kcli exec \"df -h\"
+kcli exec "df -h"
 ```
 
 **Reinstall the Operating System**
@@ -97,14 +97,14 @@ The output will be a JSON array. Pick a `template` value from the list, for exam
 
 Then, run the reinstall command with that template string:
 ```bash
-kcli reinstall \"local:vztmpl/ubuntu-24.04-standard_24.04-2_amd64.tar.zst\"
+kcli reinstall "local:vztmpl/ubuntu-24.04-standard_24.04-2_amd64.tar.zst"
 ```
 
 ### Advanced: Environment Variable
 For CI/CD pipelines or other non-interactive environments, you can provide the token via the `KVM_I7_TOKEN` environment variable instead of using the config file.
 
 ```bash
-export KVM_I7_TOKEN=\"<your-token>\"
+export KVM_I7_TOKEN="<your-token>"
 kcli status
 ```
 
