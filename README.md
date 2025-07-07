@@ -51,7 +51,7 @@ curl -L https://raw.githubusercontent.com/kvm-i7/kcli/main/kcli -o /usr/local/bi
 *You may need to prefix the command with `sudo` if you are not running as root.*
 
 ## Setup
-Before you can use `kcli`, you must set your API token. You can get this token from your provider's control panel.
+Before you can use `kcli`, you must set your API token. You can get this token from kvm-i7 discord bot.
 
 Run the following command, replacing `<your-token>` with your actual token:
 ```bash
